@@ -1,0 +1,14 @@
+<div class="card">
+    <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
+        <div class="login-form">
+            <label class="middle"><h1>Registration</h1></label>
+            <label>Username</label>
+            <input type="text" [(ngModel)]="employee.username" name="username" required/>
+            <label>Full Name</label>
+            <input type="text" [(ngModel)]="employee.fullName" name="fullName" required/>
+            <label>Password</label>
+            <input type="password" [(ngModel)]="employee.password" name="password" required/>
+            <button type="submit" [class.background-disabled]="!registerForm.valid" [disabled]="!registerForm.valid">Submit</button>
+        </div>
+    </form>
+</div>

@@ -1,3 +1,13 @@
-<p>
-  login works!
-</p>
+<div class="card">
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+  <div class="login-form">
+    <label class="middle"><h1>Login</h1></label>
+    <label>Username</label>
+    <input type="text" [(ngModel)]="username" name="username" required/>
+    <label>Password</label>
+    <input type="password" [(ngModel)]="password" name="password" required/>
+    <button type="submit" [disabled]="!loginForm.valid" [class.background-disabled]="!loginForm.valid">Submit</button>
+    <a class="reg-link" routerLink="/register">New User? Register</a>
+  </div>
+  </form>
+</div>
