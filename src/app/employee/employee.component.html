@@ -1,3 +1,21 @@
-<p>
-  employee works!
-</p>
+<div class="card">
+    <div class="link-box-top">
+        <a class="link default" (click)="goPrevious()">Previous</a>
+        <span class="middle"><h3>Employee Details</h3></span>
+        <a class="link default" (click)="goNext()">Next</a>
+    </div>
+   
+  <div class="login-form">
+    <label>Id</label>
+    <input type="text" [ngModel]="employee.id" disabled/>
+    <label>Username</label>
+    <input type="text" [ngModel]="employee.username" disabled/>
+    <label>Full Name</label>
+    <input type="text" [ngModel]="employee.fullName" disabled/>
+  </div>
+
+  <div class="link-box">
+      <a class="link green" routerLink="edit">Edit</a>
+      <a class="link red" (click)="allEmployees()">Cancel</a>
+    </div>
+</div>

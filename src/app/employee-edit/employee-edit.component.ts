@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
+import { ActivatedRoute } from "@angular/router";
+import { EmployeeService } from "src/app/service/employee.service";
 
 @Component({
   selector: 'app-employee-edit',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route:ActivatedRoute, private employeeService:EmployeeService,private location: Location) { }
 
   ngOnInit() {
+    
+  }
+
+  saveEmployee():void{
+
+  }
+
+  goBack():void{
+    this.location.back();
   }
 
 }

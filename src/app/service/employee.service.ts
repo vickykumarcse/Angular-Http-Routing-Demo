@@ -25,6 +25,10 @@ export class EmployeeService {
   getEmployees():Employee[]{
    return this.employees;
   }
+  
+  totalEmplyees():number{
+    return this.employees.length;
+  }
 
   private generateId():number{
     return this.employees.length + 1;

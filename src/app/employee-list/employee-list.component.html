@@ -1,5 +1,5 @@
 <div *ngFor="let e of employees">
-    <a href="employees/{{e.id}}"><div class="app-card" style="width: 18rem;">
+    <a routerLink="{{e.id}}"><div class="app-card" style="width: 18rem;">
         <img class="card-img-top" src="https://cdn3.iconfinder.com/data/icons/business-round-flat-vol-1-1/36/user_account_profile_avatar_person_student_male-512.png" alt="Card image cap">
         <div class="card-body">
           <h4 class="card-title">{{e.username}}</h4>
