@@ -13,7 +13,7 @@ export class EmployeeEditComponent implements OnInit {
   constructor(private route:ActivatedRoute, private employeeService:EmployeeService,private location: Location) { }
 
   ngOnInit() {
-    
+    console.log(this.route);
   }
 
   saveEmployee():void{
