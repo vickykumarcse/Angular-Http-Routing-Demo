@@ -11,15 +11,14 @@ import { Router } from "@angular/router";
 })
 export class EmployeeComponent implements OnInit {
   employee:Employee;
-  id:number;
   totalEmployee:number;
   constructor(private route:ActivatedRoute, private employeeService:EmployeeService, private router:Router) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe( params=>{
-      this.id = Number(params.get('id'));
+      const id:number = Number(params.get('id'));
       this.totalEmployee = this.employeeService.totalEmplyees();
-      this.employee = this.employeeService.getEmployee(this.id);
+      this.employee = this.employeeService.getEmployee(id);
       if(!this.employee){
         this.router.navigate(['/']);
       }
@@ -27,14 +26,14 @@ export class EmployeeComponent implements OnInit {
   }
 
   goPrevious():void{
-    if(this.id > 1){
-      this.router.navigate(['employees', this.id-1]);
+    if(this.employee.id > 1){
+      this.router.navigate(['employees', this.employee.id-1]);
     }
   }
   
   goNext():void{
-    if(this.id < this.totalEmployee){
-      this.router.navigate(['employees', this.id+1]);
+    if(this.employee.id < this.totalEmployee){
+      this.router.navigate(['employees', this.employee.id+1]);
     }
   }
 

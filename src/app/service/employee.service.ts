@@ -59,6 +59,13 @@ export class EmployeeService {
     return false;
   }
 
+  updateEmployee(employee: Employee):boolean{
+    const index = this.employees.indexOf(employee);
+    this.employees[index] = employee;
+    localStorage.setItem("Employees", JSON.stringify(this.employees));
+    return true;
+  }
+
   addEmployee(employee: Employee):boolean{
     employee.id = this.generateId();
     this.employees.push(employee);
@@ -66,4 +73,5 @@ export class EmployeeService {
     this.setLoogedIn();
     return true;
   }
+
 }

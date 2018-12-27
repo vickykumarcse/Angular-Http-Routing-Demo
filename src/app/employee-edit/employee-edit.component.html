@@ -5,11 +5,11 @@
    
   <div class="login-form">
     <label>Id</label>
-    <input type="text" [ngModel]="employee.id" />
+    <input type="text" [ngModel]="employee.id" disabled/>
     <label>Username</label>
-    <input type="text" [ngModel]="employee.username" />
+    <input type="text" [(ngModel)]="employee.username" />
     <label>Full Name</label>
-    <input type="text" [ngModel]="employee.fullName" />
+    <input type="text" [(ngModel)]="employee.fullName" />
   </div>
 
   <div class="link-box">

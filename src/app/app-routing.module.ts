@@ -24,7 +24,9 @@ const routes:Routes = [
     ],
     imports:[
         FormsModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes, {
+            paramsInheritanceStrategy: 'always'
+        })
     ],
     exports: [RouterModule],
     providers:[LoginGuard]
