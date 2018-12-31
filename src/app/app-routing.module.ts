@@ -6,11 +6,13 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginGuard } from "src/app/login/loginGuard";
+import { ImageComponent } from "src/app/image/image.component";
 
 const routes:Routes = [
     {path: 'login', component:LoginComponent, canActivate:[LoginGuard]},
     {path: 'register', component:RegisterComponent},
     {path: 'about', component:AboutComponent},
+    {path: 'image', component:ImageComponent},
     {path:'employees', loadChildren: './employee/employee.module#EmployeeModule'},
     {path: '', redirectTo:'login', pathMatch: 'full'},
     {path: '**', redirectTo:''}

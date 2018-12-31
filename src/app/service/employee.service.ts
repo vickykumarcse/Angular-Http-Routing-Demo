@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Employee } from '../employee/employee.model';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
   private employees:Employee[] = [];
-  constructor() { 
+  constructor() {
     this.employees = JSON.parse(localStorage.getItem("Employees"));
     if(!this.employees){
       this.employees = [];
@@ -16,14 +17,14 @@ export class EmployeeService {
   getEmployee(id:number):Employee{
     for(let e of this.employees){
       if(e.id === id){
-        return e;
+        return {...e};
       }
     }
     return null;
   }
 
   getEmployees():Employee[]{
-   return this.employees;
+   return [...this.employees];
   }
   
   totalEmplyees():number{
