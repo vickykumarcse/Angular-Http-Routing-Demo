@@ -9,8 +9,7 @@ export class ImageService {
 
   constructor(private http:HttpClient) { }
 
-  getImage():Observable<any>{
-    const url = "https://picsum.photos/g/200/300"
+  getImage(url:string):Observable<any>{
     return this.http.get(url, { responseType: 'blob' });
   }
 }

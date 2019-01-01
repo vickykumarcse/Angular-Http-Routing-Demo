@@ -27,7 +27,7 @@ export class EmployeeEditComponent implements OnInit {
   saveEmployee():void{
     const result = this.employeeService.updateEmployee(this.employee);
     if(result === true){
-      this.router.navigate(['/']);
+      window.alert("Saved Successfully!");
     }
   }
 

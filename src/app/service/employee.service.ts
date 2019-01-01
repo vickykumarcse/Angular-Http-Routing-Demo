@@ -61,8 +61,16 @@ export class EmployeeService {
   }
 
   updateEmployee(employee: Employee):boolean{
-    const index = this.employees.indexOf(employee);
-    this.employees[index] = employee;
+    let index = -1;
+    for(let i=0; i < this.employees.length; i++){
+      if(this.employees[i].id === employee.id){
+        index = i;
+        break;
+      }
+    }
+    if(index !== -1){
+      this.employees[index] = employee;
+    }
     localStorage.setItem("Employees", JSON.stringify(this.employees));
     return true;
   }
