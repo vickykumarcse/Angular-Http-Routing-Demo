@@ -4,7 +4,7 @@
       </a>
         <div class="card-body">
           <h4 class="card-title">{{e.username | uppercase}}</h4>
-          <p class="card-text">{{e.fullName | titlecase}}</p>
+          <p zoomHover title="{{e.fullName}}" class="card-text">{{e.fullName | formatstr | titlecase}}</p>
           <a  (click)="deleteEmployee(e.id)"><i class="fa fa-trash" aria-hidden="true"></i></a>
         </div>
       </div>
