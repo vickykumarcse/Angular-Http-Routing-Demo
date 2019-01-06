@@ -7,14 +7,13 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { AppRoutingModule } from "src/app/app-routing.module";
-import { ImageComponent } from './image/image.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    ImageComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,

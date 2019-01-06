@@ -14,6 +14,10 @@ export class EmployeeService {
     }
   }
 
+  getEmployeeIndex(id:number){
+    return this.employees.findIndex(e=> e.id === id);
+  }
+
   getEmployee(id:number):Employee{
     for(let e of this.employees){
       if(e.id === id){
@@ -21,6 +25,14 @@ export class EmployeeService {
       }
     }
     return null;
+  }
+
+  deleteEmployee(id:number){
+    if(this.getEmployee(id)){
+      this.employees.splice(this.getEmployeeIndex(id), 1);
+    }
+    localStorage.setItem("Employees", JSON.stringify(this.employees));
+    return true;
   }
 
   getEmployees():Employee[]{

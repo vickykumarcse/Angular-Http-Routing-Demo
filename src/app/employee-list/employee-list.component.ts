@@ -15,4 +15,10 @@ export class EmployeeListComponent implements OnInit {
     this.employees = this.employeeService.getEmployees();
   }
 
+  deleteEmployee(id:number){
+    let result = this.employeeService.deleteEmployee(id);
+    if(result){
+      this.employees = this.employeeService.getEmployees();
+    }
+  }
 }
