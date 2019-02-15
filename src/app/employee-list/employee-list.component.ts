@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from "src/app/service/employee.service";
 import { Employee } from "src/app/employee/employee.model";
 
+
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -15,4 +16,10 @@ export class EmployeeListComponent implements OnInit {
     this.employees = this.employeeService.getEmployees();
   }
 
+  deleteEmployee(id:number){
+    let result = this.employeeService.deleteEmployee(id);
+    if(result){
+      this.employees = this.employeeService.getEmployees();
+    }
+  }
 }

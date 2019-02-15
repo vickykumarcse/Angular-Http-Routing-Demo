@@ -7,6 +7,9 @@ import { EmployeeListComponent } from 'src/app/employee-list/employee-list.compo
 
 import { EmployeeRoutingModule } from 'src/app/employee/employee-routing.module';
 import { EmployeeEditComponent } from '../employee-edit/employee-edit.component';
+import { FormatstrPipe } from '../pipe/formatstr.pipe';
+import { ZoomDirective } from '../directive/zoom.directive';
+
 
 @NgModule({
   imports: [
@@ -17,7 +20,9 @@ import { EmployeeEditComponent } from '../employee-edit/employee-edit.component'
   declarations: [
     EmployeeListComponent,
     EmployeeComponent,
-    EmployeeEditComponent
+    EmployeeEditComponent,
+    FormatstrPipe,
+    ZoomDirective
   ]
 })
 export class EmployeeModule { }
